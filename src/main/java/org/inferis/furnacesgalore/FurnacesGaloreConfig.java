@@ -17,9 +17,9 @@ public class FurnacesGaloreConfig {
 
     public double copperAcceleration = 1.5;
     public double ironAcceleration = 2.1;
-    public double goldAcceleration = 3.2;
-    public double diamondAcceleration = 5.4;
-    public double netheriteAcceleration = 9.8;
+    public double goldAcceleration = 3.3;
+    public double diamondAcceleration = 5.5;
+    public double netheriteAcceleration = 10.0;
     
     public void save() {
         var file = new File(CONFIG_FILE);
