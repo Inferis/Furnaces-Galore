@@ -5,14 +5,18 @@ import org.inferis.furnacesgalore.FurnacesGalore;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Colors;
 
 public class FurnacesGaloreBlocks {
+    public static CopperFurnaceBlock COPPER_FURNACE;
     public static IronFurnaceBlock IRON_FURNACE;
     public static GoldFurnaceBlock GOLD_FURNACE;
+    public static DiamondFurnaceBlock DIAMOND_FURNACE;
 
     interface BlockMaker<T extends Block> {
         T makeBlock(RegistryKey<Block> key);
@@ -30,11 +34,17 @@ public class FurnacesGaloreBlocks {
     }
 
     public static void registerBlocks() {
+        COPPER_FURNACE = registerBlock("copper_furnace", key -> { 
+            return new CopperFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.ORANGE).registryKey(key)); 
+        });       
         IRON_FURNACE = registerBlock("iron_furnace", key -> { 
-            return new IronFurnaceBlock(AbstractBlock.Settings.copy(Blocks.STONE).registryKey(key)); 
+            return new IronFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.IRON_GRAY).registryKey(key)); 
         });       
         GOLD_FURNACE = registerBlock("gold_furnace", key -> { 
-            return new GoldFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).registryKey(key)); 
+            return new GoldFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.GOLD).registryKey(key)); 
+        });       
+        DIAMOND_FURNACE = registerBlock("diamond_furnace", key -> { 
+            return new DiamondFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.DIAMOND_BLUE).registryKey(key)); 
         });       
     }
 }

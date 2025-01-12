@@ -12,8 +12,10 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 
 public class FurnacesGaloreItems {
+    public static FurnaceBlockItem COPPER_FURNACE;
     public static FurnaceBlockItem IRON_FURNACE;
     public static FurnaceBlockItem GOLD_FURNACE;
+    public static FurnaceBlockItem DIAMOND_FURNACE;
 
     interface ItemMaker<T extends Item> {
         T makeItem(RegistryKey<Item> key);
@@ -31,11 +33,17 @@ public class FurnacesGaloreItems {
     public static void registerItems() {
         FurnacesGalore.LOGGER.info("Registering mod items for " + FurnacesGalore.MODID);
 
+        COPPER_FURNACE = registerItem("copper_furnace", key -> { 
+            return new FurnaceBlockItem(FurnacesGaloreBlocks.COPPER_FURNACE, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(key)); 
+        });
         IRON_FURNACE = registerItem("iron_furnace", key -> { 
             return new FurnaceBlockItem(FurnacesGaloreBlocks.IRON_FURNACE, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(key)); 
         });
         GOLD_FURNACE = registerItem("gold_furnace", key -> { 
             return new FurnaceBlockItem(FurnacesGaloreBlocks.GOLD_FURNACE, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(key)); 
+        });
+        DIAMOND_FURNACE = registerItem("diamond_furnace", key -> { 
+            return new FurnaceBlockItem(FurnacesGaloreBlocks.DIAMOND_FURNACE, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(key)); 
         });
     }
 
@@ -43,8 +51,10 @@ public class FurnacesGaloreItems {
         FurnacesGalore.LOGGER.info("Registering item groups for " + FurnacesGalore.MODID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+            content.add(COPPER_FURNACE);
             content.add(IRON_FURNACE);
             content.add(GOLD_FURNACE);
+            content.add(DIAMOND_FURNACE);
         });
     }    
 }

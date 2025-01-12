@@ -1,5 +1,7 @@
 package org.inferis.furnacesgalore.block.entity;
 
+import org.inferis.furnacesgalore.FurnacesGalore;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +13,7 @@ public class GoldFurnaceBlockEntity extends AbstractAcceleratedFurnaceBlockEntit
 
     @Override
     public double getCookTimeAcceleration() {
-        return 1.5;
+        return FurnacesGalore.CONFIG.goldAcceleration;
     }
 
     @Override

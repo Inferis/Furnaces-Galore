@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "front": "furnaces-galore:block/diamond_furnace_front_on",
+        "side": "furnaces-galore:block/diamond_furnace_side",
+        "top": "furnaces-galore:block/diamond_furnace_top"
+    }
+}

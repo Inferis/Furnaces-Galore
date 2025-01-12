@@ -14,7 +14,11 @@ public class AbstractFurnaceBlockEntityMixin {
 	@Inject(at = @At("RETURN"), method = "getCookTime(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/block/entity/AbstractFurnaceBlockEntity;)I", cancellable = true)
 	private static void getCookTime(ServerWorld world, AbstractFurnaceBlockEntity furnace, CallbackInfoReturnable<Integer> info) {
 		if (furnace instanceof AbstractAcceleratedFurnaceBlockEntity acceleratedFurnace) {
-			info.setReturnValue((int)((double)info.getReturnValue() / acceleratedFurnace.getCookTimeAcceleration()));
+			var cookTime = (int)((double)info.getReturnValue() / acceleratedFurnace.getCookTimeAcceleration());
+			if (cookTime < 2) {
+				cookTime = 2;
+			}
+			info.setReturnValue(cookTime);
 		}
 	}
 }

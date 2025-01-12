@@ -2,7 +2,6 @@ package org.inferis.furnacesgalore.block;
 
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.FurnaceBlock;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -13,10 +12,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import org.inferis.furnacesgalore.block.entity.AbstractAcceleratedFurnaceBlockEntity;
-import org.inferis.furnacesgalore.block.entity.FurnacesGaloreBlockEntityTypes;
-import org.inferis.furnacesgalore.block.entity.IronFurnaceBlockEntity;
-
-import com.mojang.serialization.MapCodec;
 
 public abstract class AbstractAcceleratedFurnaceBlock extends AbstractFurnaceBlock {
     protected AbstractAcceleratedFurnaceBlock(Settings settings) {
