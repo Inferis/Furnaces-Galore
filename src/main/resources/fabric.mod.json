@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "furnaces-galore",
+	"version": "${version}",
+	"name": "Furnaces Galore",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Inferis"
+	],
+	"contact": {
+		"homepage": "https://inferis.org",
+		"sources": "https://github.com/Inferis/Furnaces-Galore"
+	},
+	"license": "MIT",
+	"icon": "assets/furnaces-galore/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.inferis.furnacesgalore.FurnacesGalore"
+		],
+		"client": [
+			"org.inferis.furnacesgalore.FurnacesGaloreClient"
+		]
+	},
+	"mixins": [
+		"furnaces-galore.mixins.json",
+		{
+			"config": "furnaces-galore.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

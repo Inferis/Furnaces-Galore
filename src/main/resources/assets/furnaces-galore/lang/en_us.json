@@ -1,0 +1,10 @@
+{
+    "block.furnaces-galore.iron_furnace": "Iron Furnace",
+    "block.furnaces-galore.gold_furnace": "Gold Furnace",
+
+    "item.furnaces-galore.iron_furnace": "Iron Furnace",
+    "item.furnaces-galore.gold_furnace": "Gold Furnace",
+
+    "container.furnaces-galore.iron_furnace": "Iron Furnace",
+    "container.furnaces-galore.gold_furnace": "Gold Furnace"
+}
