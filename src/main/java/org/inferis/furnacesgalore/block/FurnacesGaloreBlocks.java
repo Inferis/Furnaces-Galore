@@ -35,19 +35,19 @@ public class FurnacesGaloreBlocks {
 
     public static void registerBlocks() {
         COPPER_FURNACE = registerBlock("copper_furnace", key -> { 
-            return new CopperFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.ORANGE).strength(1).registryKey(key)); 
+            return new CopperFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.ORANGE).registryKey(key)); 
         });       
         IRON_FURNACE = registerBlock("iron_furnace", key -> { 
-            return new IronFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.IRON_GRAY).strength(1).registryKey(key)); 
+            return new IronFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.IRON_GRAY).registryKey(key)); 
         });       
         GOLD_FURNACE = registerBlock("gold_furnace", key -> { 
-            return new GoldFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.GOLD).strength(1).registryKey(key)); 
+            return new GoldFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.GOLD).registryKey(key)); 
         });       
         DIAMOND_FURNACE = registerBlock("diamond_furnace", key -> { 
-            return new DiamondFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.DIAMOND_BLUE).strength(1).registryKey(key)); 
+            return new DiamondFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.DIAMOND_BLUE).registryKey(key)); 
         });       
         NETHERITE_FURNACE = registerBlock("netherite_furnace", key -> { 
-            return new NetheriteFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.BLACK).strength(1).registryKey(key)); 
+            return new NetheriteFurnaceBlock(AbstractBlock.Settings.copy(Blocks.FURNACE).mapColor(MapColor.BLACK).registryKey(key)); 
         });       
     }
 }

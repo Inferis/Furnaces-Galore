@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "furnaces-galore:copper_furnace",
+        "furnaces-galore:iron_furnace",
+        "furnaces-galore:gold_furnace",
+        "furnaces-galore:diamond_furnace",
+        "furnaces-galore:netherite_furnace"
+    ]
+}
