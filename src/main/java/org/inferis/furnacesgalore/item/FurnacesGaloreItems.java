@@ -54,7 +54,7 @@ public class FurnacesGaloreItems {
     public static void registerItemGroups() {
         FurnacesGalore.LOGGER.info("Registering item groups for " + FurnacesGalore.MODID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
             content.add(COPPER_FURNACE);
             content.add(IRON_FURNACE);
             content.add(GOLD_FURNACE);
