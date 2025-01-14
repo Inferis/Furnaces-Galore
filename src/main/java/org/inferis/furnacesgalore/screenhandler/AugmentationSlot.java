@@ -1,6 +1,7 @@
 package org.inferis.furnacesgalore.screenhandler;
 
 import org.inferis.furnacesgalore.item.CatalystItem;
+import org.inferis.furnacesgalore.item.ExperienceDoublerItem;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -13,7 +14,8 @@ public class AugmentationSlot extends Slot {
     
     @Override
     public boolean canInsert(ItemStack stack) {
-        return super.canInsert(stack) && stack.getItem() instanceof CatalystItem;
+        var item = stack.getItem();
+        return super.canInsert(stack) && (item instanceof CatalystItem || item instanceof ExperienceDoublerItem);
     }
 
     @Override

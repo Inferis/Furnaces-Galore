@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CXC",
+        "FXF",
+        "CCC"
+    ],
+    "key": {
+        "X": "minecraft:experience_bottle",
+        "C": "minecraft:cobblestone",
+        "F": "minecraft:furnace"
+    },
+    "result": {
+        "id": "furnaces-galore:experience_doubler"
+    }
+  }

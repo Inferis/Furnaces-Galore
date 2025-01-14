@@ -18,6 +18,7 @@ public class FurnacesGaloreItems {
     public static FurnaceBlockItem DIAMOND_FURNACE;
     public static FurnaceBlockItem NETHERITE_FURNACE;
     public static CatalystItem CATALYST;
+    public static ExperienceDoublerItem EXPERIENCE_DOUBLER;
 
     interface ItemMaker<T extends Item> {
         T makeItem(RegistryKey<Item> key);
@@ -54,6 +55,9 @@ public class FurnacesGaloreItems {
         CATALYST = registerItem("catalyst", key -> { 
             return new CatalystItem(new Item.Settings().useItemPrefixedTranslationKey().registryKey(key)); 
         });
+        EXPERIENCE_DOUBLER = registerItem("experience_doubler", key -> { 
+            return new ExperienceDoublerItem(new Item.Settings().useItemPrefixedTranslationKey().registryKey(key)); 
+        });
     }
 
     public static void registerItemGroups() {
@@ -66,6 +70,7 @@ public class FurnacesGaloreItems {
             content.add(DIAMOND_FURNACE);
             content.add(NETHERITE_FURNACE);
             content.add(CATALYST);
+            content.add(EXPERIENCE_DOUBLER);
         });
     }    
 }
