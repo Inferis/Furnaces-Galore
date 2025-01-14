@@ -2,7 +2,6 @@ package org.inferis.furnacesgalore.mixin;
 
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.server.world.ServerWorld;
-
 import org.inferis.furnacesgalore.block.entity.AbstractAcceleratedFurnaceBlockEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,12 +1,12 @@
 package org.inferis.furnacesgalore;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.minecraft.util.Identifier;
 
 import org.inferis.furnacesgalore.block.FurnacesGaloreBlocks;
 import org.inferis.furnacesgalore.block.entity.FurnacesGaloreBlockEntityTypes;
 import org.inferis.furnacesgalore.item.FurnacesGaloreItems;
+import org.inferis.furnacesgalore.screenhandler.FurnacesGaloreScreenHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,5 +27,6 @@ public class FurnacesGalore implements ModInitializer {
 		FurnacesGaloreBlockEntityTypes.registerBlockEntityTypes();
 		FurnacesGaloreItems.registerItems();
 		FurnacesGaloreItems.registerItemGroups();
+		FurnacesGaloreScreenHandlers.registerScreenHandlers();
 	}
 }

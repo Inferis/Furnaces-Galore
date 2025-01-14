@@ -4,7 +4,6 @@ import org.inferis.furnacesgalore.FurnacesGalore;
 import org.inferis.furnacesgalore.block.FurnacesGaloreBlocks;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

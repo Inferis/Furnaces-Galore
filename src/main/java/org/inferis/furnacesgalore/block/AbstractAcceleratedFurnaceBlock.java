@@ -56,7 +56,6 @@ public abstract class AbstractAcceleratedFurnaceBlock extends AbstractFurnaceBlo
 
         Direction direction = (Direction)state.get(FACING);
         Direction.Axis axis = direction.getAxis();
-        double g = 0.52;
         double h = random.nextDouble() * 0.6 - 0.3;
         double dx = axis == Axis.X ? (double)direction.getOffsetX() * 0.52 : h;
         double dy = random.nextDouble() * 6.0 / 16.0;

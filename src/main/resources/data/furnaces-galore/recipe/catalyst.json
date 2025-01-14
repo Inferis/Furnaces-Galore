@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CRC",
+        "FBF",
+        "CRC"
+    ],
+    "key": {
+        "B": "minecraft:blaze_powder",
+        "C": "minecraft:cobblestone",
+        "F": "minecraft:furnace",
+        "R": "minecraft:redstone"
+    },
+    "result": {
+        "id": "furnaces-galore:catalyst"
+    }
+  }
