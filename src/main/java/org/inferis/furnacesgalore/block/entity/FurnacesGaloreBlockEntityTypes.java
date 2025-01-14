@@ -22,7 +22,12 @@ public class FurnacesGaloreBlockEntityTypes {
     public static final BlockEntityType<DiamondFurnaceBlockEntity> DIAMOND_FURNACE = register(
         "diamond_furnace", 
         FabricBlockEntityTypeBuilder.<DiamondFurnaceBlockEntity>create(DiamondFurnaceBlockEntity::new, FurnacesGaloreBlocks.DIAMOND_FURNACE).build());
-                        
+    public static final BlockEntityType<NetheriteFurnaceBlockEntity> NETHERITE_FURNACE = register(
+        "netherite_furnace", 
+        FabricBlockEntityTypeBuilder.<NetheriteFurnaceBlockEntity>create(NetheriteFurnaceBlockEntity::new, FurnacesGaloreBlocks.NETHERITE_FURNACE).build());
+                                    
+        
+
     public static <T extends BlockEntityType<?>> T register(String identifier, T blockEntityType) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, FurnacesGalore.id(identifier), blockEntityType);
     }

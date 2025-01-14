@@ -16,6 +16,7 @@ public class FurnacesGaloreItems {
     public static FurnaceBlockItem IRON_FURNACE;
     public static FurnaceBlockItem GOLD_FURNACE;
     public static FurnaceBlockItem DIAMOND_FURNACE;
+    public static FurnaceBlockItem NETHERITE_FURNACE;
 
     interface ItemMaker<T extends Item> {
         T makeItem(RegistryKey<Item> key);
@@ -45,6 +46,9 @@ public class FurnacesGaloreItems {
         DIAMOND_FURNACE = registerItem("diamond_furnace", key -> { 
             return new FurnaceBlockItem(FurnacesGaloreBlocks.DIAMOND_FURNACE, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(key)); 
         });
+        NETHERITE_FURNACE = registerItem("netherite_furnace", key -> { 
+            return new FurnaceBlockItem(FurnacesGaloreBlocks.NETHERITE_FURNACE, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(key)); 
+        });
     }
 
     public static void registerItemGroups() {
@@ -55,6 +59,7 @@ public class FurnacesGaloreItems {
             content.add(IRON_FURNACE);
             content.add(GOLD_FURNACE);
             content.add(DIAMOND_FURNACE);
+            content.add(NETHERITE_FURNACE);
         });
     }    
 }

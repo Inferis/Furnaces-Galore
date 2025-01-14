@@ -3,14 +3,17 @@
     "block.furnaces-galore.iron_furnace": "Iron Furnace",
     "block.furnaces-galore.gold_furnace": "Gold Furnace",
     "block.furnaces-galore.diamond_furnace": "Diamond Furnace",
+    "block.furnaces-galore.netherite_furnace": "Netherite Furnace",
 
     "item.furnaces-galore.copper_furnace": "Copper Furnace",
     "item.furnaces-galore.iron_furnace": "Iron Furnace",
     "item.furnaces-galore.gold_furnace": "Gold Furnace",
     "item.furnaces-galore.diamond_furnace": "Diamond Furnace",
+    "item.furnaces-galore.netherite_furnace": "Netherite Furnace",
 
     "container.furnaces-galore.copper_furnace": "Copper Furnace",
     "container.furnaces-galore.iron_furnace": "Iron Furnace",
     "container.furnaces-galore.gold_furnace": "Gold Furnace",
-    "container.furnaces-galore.diamond_furnace": "Diamond Furnace"
+    "container.furnaces-galore.diamond_furnace": "Diamond Furnace",
+    "container.furnaces-galore.netherite_furnace": "Netherite Furnace"
 }
