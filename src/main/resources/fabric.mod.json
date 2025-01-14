@@ -23,11 +23,7 @@
 		]
 	},
 	"mixins": [
-		"furnaces-galore.mixins.json",
-		{
-			"config": "furnaces-galore.client.mixins.json",
-			"environment": "client"
-		}
+		"furnaces-galore.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
