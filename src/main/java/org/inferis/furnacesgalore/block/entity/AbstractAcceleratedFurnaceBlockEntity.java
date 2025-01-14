@@ -48,14 +48,21 @@ public abstract class AbstractAcceleratedFurnaceBlockEntity extends AbstractFurn
     @Override
     protected void writeNbt(NbtCompound nbt, WrapperLookup registries) {
         super.writeNbt(nbt, registries);
-        Inventories.writeNbt(nbt, augmentsInventory.getItems(), registries);
+
+        NbtCompound furnaceGaloreNbt = new NbtCompound();
+        Inventories.writeNbt(furnaceGaloreNbt, augmentsInventory.getItems(), registries);
+        nbt.put("furnace_galore", furnaceGaloreNbt);
     }
 
     @Override
     protected void readNbt(NbtCompound nbt, WrapperLookup registries) {
         super.readNbt(nbt, registries);
-        var inventory = AugmentsInventory.createInventory();
-        Inventories.readNbt(nbt, inventory, registries);
-        augmentsInventory.setItems(inventory);
-      }
+
+        if (nbt.contains("furnace_galore")) {
+            NbtCompound furnaceGaloreNbt = nbt.getCompound("furnace_galore");
+            var inventory = AugmentsInventory.createInventory();
+            Inventories.readNbt(furnaceGaloreNbt, inventory, registries);
+            augmentsInventory.setItems(inventory);
+        }
+    }
 }
