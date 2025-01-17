@@ -2,8 +2,10 @@ package org.inferis.furnacesgalore.block.entity;
 
 import java.util.List;
 
+import org.inferis.furnacesgalore.FurnacesGalore;
 import org.inferis.furnacesgalore.item.CatalystItem;
 import org.inferis.furnacesgalore.item.ExperienceDoublerItem;
+import org.inferis.furnacesgalore.mixin.IAbstractFurnaceBlockEntityAccessor;
 import org.inferis.furnacesgalore.screenhandler.AcceleratedFurnaceScreenHandler;
 
 import com.google.common.collect.Lists;
@@ -12,8 +14,10 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Reference2IntMap;
 import it.unimi.dsi.fastutil.objects.Reference2IntOpenHashMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FurnaceBlock;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -85,19 +89,10 @@ public abstract class AbstractAcceleratedFurnaceBlockEntity extends AbstractFurn
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
+    @Override
     public List<RecipeEntry<?>> getRecipesUsedAndDropExperience(ServerWorld world, Vec3d pos) {
         List<RecipeEntry<?>> list = Lists.newArrayList();
-        Class<?> entityClass = AbstractFurnaceBlockEntity.class;
-        ObjectIterator iterator = null;
-        try {
-            var field = entityClass.getDeclaredField("recipesUsed");
-            field.setAccessible(true);
-            var recipesUsed = (Reference2IntOpenHashMap<RegistryKey<Recipe<?>>>)field.get(this);
-            iterator = recipesUsed.reference2IntEntrySet().iterator();
-        } catch (Exception e) {
-            iterator = null;
-        }
-
+        var iterator = ((IAbstractFurnaceBlockEntityAccessor)this).getRecipesUsed().reference2IntEntrySet().iterator();
         if (iterator != null) {
             while (iterator.hasNext()) {
                 Reference2IntMap.Entry<RegistryKey<Recipe<?>>> entry = (Reference2IntMap.Entry)iterator.next();
@@ -113,7 +108,7 @@ public abstract class AbstractAcceleratedFurnaceBlockEntity extends AbstractFurn
     }
 
     private static void dropExperience(ServerWorld world, Vec3d pos, AbstractAcceleratedFurnaceBlockEntity entity, int multiplier, float experience) {
-        int droppedExperience = MathHelper.floor((float)multiplier * experience);
+        int droppedExperience = MathHelper.ceil((float)multiplier * experience);
         float f = MathHelper.fractionalPart((float)multiplier * experience);
         if (f != 0.0F && Math.random() < (double)f) {
             ++droppedExperience;

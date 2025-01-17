@@ -3,7 +3,8 @@
 	"package": "org.inferis.furnacesgalore.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"AbstractFurnaceBlockEntityMixin"
+		"AbstractFurnaceBlockEntityMixin",
+		"IAbstractFurnaceBlockEntityAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1
