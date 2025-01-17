@@ -101,9 +101,9 @@ modrinth {
     token = br.readLine(); 
 
     projectId = 'QrrxaKRY' // The ID of your Modrinth project. Slugs will not work.
-    versionNumber = '0.2.0' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
-    versionName = '0.2.0-1.21.4' // The version title. If not specified, it'll use the version number
-	changelog = "Bugfixes, and added an Experience Doubler augment that doubles the experience gained from the furnace. There's still only one slot so have to make choices."
+    versionNumber = '0.2.1' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
+    versionName = '0.2.1-1.21.4' // The version title. If not specified, it'll use the version number
+	changelog = "Fixed a bug with experience not being returned when taking items from the furnace."
     uploadFile = remapJar // Tells Minotaur to use the remapped jar
     gameVersions = ['1.21.4'] // An array of game versions the version supports
     loaders = ['fabric'] // Self-explanatory.
